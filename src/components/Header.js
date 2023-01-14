@@ -1,14 +1,17 @@
 import { Icon } from "@iconify/react";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const { pageTitle, pageIcon } = useSelector((state) => state.activePage);
+
   return (
     <div className='c-header'>
       <div>
         <Icon
-          icon='material-symbols:home-outline-rounded'
+          icon={pageIcon}
           className='icnyfy me-2'
         />
-        <span className='text-muted'>Home</span>
+        <span className='text-muted'>{pageTitle}</span>
       </div>
       <div>
         <span>Hi, Admin!</span>

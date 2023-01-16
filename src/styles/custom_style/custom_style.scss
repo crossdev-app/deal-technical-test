@@ -24,6 +24,10 @@ body {
     }
   }
 
+  .fit {
+    width: 1%;
+  }
+
   .icnyfy {
     margin-bottom: 4px;
     font-size: 18px;
@@ -80,5 +84,7 @@ body {
   .main-container {
     margin-left: 200px;
     padding: 12px;
+    height: calc(100vh - 58px);
+    overflow-y: auto;
   }
 }

@@ -3,13 +3,14 @@ import Header from "./Header";
 import Sidebar from "./Sidebar";
 
 const Layout = ({ children, pageTitle }) => {
+  const title = `${pageTitle} | Dashboard`;
   return (
     <>
       <Head>
-        <title>{pageTitle} | Dashboard</title>
-        <meta charset='UTF-8' />
+        <title>{title}</title>
+        <meta charSet='UTF-8' />
         <meta
-          http-equiv='X-UA-Compatible'
+          httpEquiv='X-UA-Compatible'
           content='IE=edge'
         />
         <meta

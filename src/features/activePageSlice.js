@@ -3,16 +3,16 @@ import { createSlice } from "@reduxjs/toolkit";
 const activePageSlice = createSlice({
   name: "activePage",
   initialState: {
-    pageTitle: "Home",
-    pageIcon: "material-symbols:home-outline-rounded",
+    title: "Home",
+    icon: "material-symbols:home-outline-rounded",
   },
   reducers: {
-    update: (state, action) => {
-      state.pageTitle = action.payload.pageTitle;
-      state.pageIcon = action.payload.pageIcon;
+    updatePage: (state, action) => {
+      state.title = action.payload.title;
+      state.icon = action.payload.icon;
     },
   },
 });
 
-export const { update } = activePageSlice.actions;
+export const { updatePage } = activePageSlice.actions;
 export default activePageSlice.reducer;

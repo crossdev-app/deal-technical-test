@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductData } from "@/features/productSlice";
 import Tableproducts from "@/components/Tableproducts";
+import Filterproduct from "@/components/Filterproduct";
 
 const product = () => {
   const product = useSelector((state) => state.product);
@@ -21,12 +22,17 @@ const product = () => {
         <div>Error: {product.error}</div>
       ) : null}
       {!product.loading && product.dataProduct.length ? (
-        // <ul>
-        //   {product.dataProduct.map((product) => (
-        //     <li key={product.id}>{product.title}</li>
-        //   ))}
-        // </ul>
-        <Tableproducts dataProduct={product.dataProduct} />
+        <>
+          <Filterproduct />
+
+          <Tableproducts
+            dataProduct={
+              product.filterStatus > 0 && product.filterKey !== 0
+                ? product.filteredDataProduct
+                : product.dataProduct
+            }
+          />
+        </>
       ) : null}
     </Layout>
   );

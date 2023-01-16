@@ -34,8 +34,19 @@ body {
     color: #aaa;
   }
 
+  .rdt_TableHead {
+    font-weight: bold;
+    font-size: 14px;
+    color: $base-white;
+  }
+
+  .rdt_TableHeadRow {
+    background-color: $base-color-lighter;
+  }
+
   .c-header {
     margin-left: 200px;
+    margin-bottom: 8px;
     padding: 12px;
     color: $base-color;
     font-size: 14px;
@@ -84,7 +95,7 @@ body {
   .main-container {
     margin-left: 200px;
     padding: 12px;
-    height: calc(100vh - 58px);
+    height: calc(100vh - 66px);
     overflow-y: auto;
   }
 }

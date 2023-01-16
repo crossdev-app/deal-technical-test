@@ -23,8 +23,17 @@ body .icnyfy {
   font-size: 18px;
   color: #aaa;
 }
+body .rdt_TableHead {
+  font-weight: bold;
+  font-size: 14px;
+  color: #fefefe;
+}
+body .rdt_TableHeadRow {
+  background-color: #a571e8;
+}
 body .c-header {
   margin-left: 200px;
+  margin-bottom: 8px;
   padding: 12px;
   color: #6913d8;
   font-size: 14px;
@@ -66,6 +75,6 @@ body .c-sidebar ul li {
 body .main-container {
   margin-left: 200px;
   padding: 12px;
-  height: calc(100vh - 58px);
+  height: calc(100vh - 66px);
   overflow-y: auto;
 }/*# sourceMappingURL=custom_style.css.map */

@@ -31,6 +31,13 @@ body .rdt_TableHead {
 body .rdt_TableHeadRow {
   background-color: #a571e8;
 }
+body .modal-header {
+  padding: 8px 20px;
+  border-bottom: none;
+}
+body .modal-footer {
+  padding: 8px 20px;
+}
 body .c-header {
   margin-left: 200px;
   margin-bottom: 8px;

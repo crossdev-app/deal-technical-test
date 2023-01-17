@@ -27,7 +27,11 @@ const product = () => {
 
           <Tableproducts
             dataProduct={
-              product.filterStatus > 0 && product.filterKey !== 0
+              product.filterBrandKey != 0 ||
+              product.filterCategoryKey != 0 ||
+              product.filterPrice.min !== null ||
+              product.filterPrice.max !== null ||
+              product.queryProductName !== null
                 ? product.filteredDataProduct
                 : product.dataProduct
             }

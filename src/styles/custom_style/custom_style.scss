@@ -44,6 +44,15 @@ body {
     background-color: $base-color-lighter;
   }
 
+  .modal-header {
+    padding: 8px 20px;
+    border-bottom: none;
+  }
+
+  .modal-footer {
+    padding: 8px 20px;
+  }
+
   .c-header {
     margin-left: 200px;
     margin-bottom: 8px;

@@ -9,7 +9,13 @@ const initialState = {
   listCategory: [],
   listBrand: [],
   filterStatus: 0, // 0: None, 1: Brand, 2:  Category
-  filterKey: 0,
+  filterCategoryKey: 0,
+  filterBrandKey: 0,
+  filterPrice: {
+    min: null,
+    max: null,
+  },
+  queryProductName: null,
 };
 
 export const fetchProductData = createAsyncThunk(
@@ -37,30 +43,92 @@ const productSlice = createSlice({
       }
       state.filterStatus = action.payload.filterBy;
     },
-    setFilteredKey: (state, action) => {
-      if (action.payload.filterKey != 0) {
-        state.filterKey = action.payload.filterKey;
+    setFilteredCategoryKey: (state, action) => {
+      state.filterCategoryKey = action.payload.filterCategoryKey;
+    },
+    setFilteredBrandKey: (state, action) => {
+      state.filterBrandKey = action.payload.filterBrandKey;
+    },
+    setMinPrice: (state, action) => {
+      if (action.payload.min === "") {
+        state.filterPrice.min = null;
       } else {
-        state.filterKey = 0;
+        state.filterPrice.min = action.payload.min;
+      }
+    },
+    setMaxPrice: (state, action) => {
+      if (action.payload.max === "") {
+        state.filterPrice.max = null;
+      } else {
+        state.filterPrice.max = action.payload.max;
+      }
+    },
+    searchProductName: (state, action) => {
+      if (action.payload.name === "") {
+        state.queryProductName = null;
+      } else {
+        state.queryProductName = action.payload.name;
       }
     },
     setFilteredDataProduct: (state, action) => {
-      // Filtered by brand or category
-      if (state.filterStatus == 1 && state.filterKey != 0) {
-        const fltrBrand = state.dataProduct.filter((items) => {
-          return items.brand === state.filterKey;
+      let fltrd = state.dataProduct;
+
+      if (state.filterCategoryKey != 0 && state.filterBrandKey != 0) {
+        fltrd = fltrd.filter((items) => {
+          return (
+            items.category === state.filterCategoryKey &&
+            items.brand === state.filterBrandKey
+          );
         });
-        state.filteredDataProduct = fltrBrand;
-      }
-      if (state.filterStatus == 2 && state.filterKey != 0) {
-        const fltrCat = state.dataProduct.filter((items) => {
-          return items.category === state.filterKey;
-        });
-        state.filteredDataProduct = fltrCat;
+        state.filteredDataProduct = fltrd;
+      } else {
+        if (state.filterBrandKey != 0) {
+          fltrd = fltrd.filter((items) => {
+            return items.brand === state.filterBrandKey;
+          });
+          state.filteredDataProduct = fltrd;
+        }
+        if (state.filterCategoryKey != 0) {
+          fltrd = fltrd.filter((items) => {
+            return items.category === state.filterCategoryKey;
+          });
+          state.filteredDataProduct = fltrd;
+        }
       }
 
       // Filtered by price
+      if (state.filterPrice.min !== null && state.filterPrice.max !== null) {
+        fltrd = fltrd.filter((items) => {
+          return (
+            items.price >= state.filterPrice.min &&
+            items.price <= state.filterPrice.max
+          );
+        });
+        state.filteredDataProduct = fltrd;
+      } else {
+        if (state.filterPrice.min !== null) {
+          fltrd = fltrd.filter((items) => {
+            return items.price >= state.filterPrice.min;
+          });
+          state.filteredDataProduct = fltrd;
+        }
+        if (state.filterPrice.max !== null) {
+          fltrd = fltrd.filter((items) => {
+            return items.price <= state.filterPrice.max;
+          });
+          state.filteredDataProduct = fltrd;
+        }
+      }
+
       // Filtered by name
+      if (state.queryProductName !== null) {
+        fltrd = fltrd.filter((items) => {
+          return items.title
+            .toLowerCase()
+            .includes(state.queryProductName.toLowerCase());
+        });
+        state.filteredDataProduct = fltrd;
+      }
     },
   },
   extraReducers: (builder) => {
@@ -92,7 +160,11 @@ const productSlice = createSlice({
 export const {
   showDataProduct,
   activateFilter,
-  setFilteredKey,
+  setFilteredCategoryKey,
+  setFilteredBrandKey,
+  setMinPrice,
+  setMaxPrice,
+  searchProductName,
   setFilteredDataProduct,
 } = productSlice.actions;
 export default productSlice.reducer;

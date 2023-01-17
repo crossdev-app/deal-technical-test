@@ -26,11 +26,7 @@ const Sidebar = () => {
             />
           </li>
         </Link>
-        <Link
-          href='/product'
-          onClick={() => {
-            changePage("Product", "fluent-mdl2:product-variant");
-          }}>
+        <Link href='/product'>
           <li className={title === "Product" ? "sidemenu-active" : ""}>
             <Sidemenu
               icon={"fluent-mdl2:product-variant"}

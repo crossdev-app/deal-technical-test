@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProductData } from "@/features/productSlice";
 import Tableproducts from "@/components/Tableproducts";
 import Filterproduct from "@/components/Filterproduct";
+import { updatePage } from "@/features/activePageSlice";
 
 const product = () => {
   const product = useSelector((state) => state.product);
@@ -13,6 +14,9 @@ const product = () => {
     if (!product.dataProduct.length) {
       dispatch(fetchProductData());
     }
+    dispatch(
+      updatePage({ title: "Product", icon: "fluent-mdl2:product-variant" })
+    );
   }, []);
 
   return (

@@ -10,6 +10,7 @@ import {
 import { Icon } from "@iconify/react";
 import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
+import Link from "next/link";
 
 const Filterproduct = () => {
   const product = useSelector((state) => state.product);
@@ -42,32 +43,43 @@ const Filterproduct = () => {
   const handleShow = () => setShow(true);
 
   return (
-    <div className='d-flex justify-content-end align-items-center'>
-      <div className='col-3 mb-3 me-2'>
-        <div className='input-group input-group-sm'>
-          <span className='input-group-text'>
-            <Icon icon='mingcute:search-line' />
-          </span>
-          <input
-            type='text'
-            className='form-control'
-            placeholder='Search product'
-            onChange={(e) => {
-              queryName(e);
-            }}
-          />
+    <div className='d-flex justify-content-between align-items-center'>
+      <Link href='/product/chart'>
+        <button className='btn btn-sm btn-outline-danger mb-3'>
+          <Icon
+            icon='material-symbols:insert-chart-outline-rounded'
+            style={{ fontSize: "18px", marginBottom: "3px" }}
+          />{" "}
+          Chart
+        </button>
+      </Link>
+      <div className='col-6 d-flex justify-content-end'>
+        <div className='col-4 mb-3 me-2'>
+          <div className='input-group input-group-sm'>
+            <span className='input-group-text'>
+              <Icon icon='mingcute:search-line' />
+            </span>
+            <input
+              type='text'
+              className='form-control'
+              placeholder='Search product'
+              onChange={(e) => {
+                queryName(e);
+              }}
+            />
+          </div>
         </div>
-      </div>
 
-      <button
-        className='btn btn-sm btn-outline-info mb-3'
-        onClick={handleShow}>
-        <Icon
-          icon='material-symbols:filter-list'
-          style={{ fontSize: "18px", marginBottom: "3px" }}
-        />{" "}
-        Filter
-      </button>
+        <button
+          className='btn btn-sm btn-outline-info mb-3'
+          onClick={handleShow}>
+          <Icon
+            icon='material-symbols:filter-list'
+            style={{ fontSize: "18px", marginBottom: "3px" }}
+          />{" "}
+          Filter
+        </button>
+      </div>
 
       <Modal
         show={show}

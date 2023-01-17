@@ -16,6 +16,7 @@ const initialState = {
     max: null,
   },
   queryProductName: null,
+  dataChart: [],
 };
 
 export const fetchProductData = createAsyncThunk(
@@ -143,6 +144,17 @@ const productSlice = createSlice({
         }
         if (!state.listCategory.includes(product.category)) {
           state.listCategory.push(product.category);
+          let stck = 0;
+          const catArray = state.dataProduct.filter((itm) => {
+            return itm.category === product.category;
+          });
+          catArray.forEach((cat) => {
+            stck = stck + cat.stock;
+          });
+          let cd = {};
+          cd.name = product.category;
+          cd.stock = stck;
+          state.dataChart.push(cd);
         }
       });
     });

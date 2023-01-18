@@ -8,7 +8,7 @@ import { updatePage } from "@/features/activePageSlice";
 import Loadingindicator from "@/components/Loadingindicator";
 
 const product = () => {
-  const product = useSelector((state) => state.product);
+  const product = useSelector((state) => state.Product);
   const dispatch = useDispatch();
 
   useEffect(() => {

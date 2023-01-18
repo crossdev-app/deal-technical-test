@@ -7,7 +7,7 @@ import { updatePage } from "@/features/activePageSlice";
 import { fetchProductData } from "@/features/productSlice";
 
 const Chart = () => {
-  const product = useSelector((state) => state.product);
+  const product = useSelector((state) => state.Product);
   const dispatch = useDispatch();
   useEffect(() => {
     if (!product.dataProduct.length) {

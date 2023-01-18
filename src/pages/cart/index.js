@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 const index = () => {
-  const cart = useSelector((state) => state.cart);
+  const cart = useSelector((state) => state.Cart);
   const dispatch = useDispatch();
   useEffect(() => {
     if (!cart.dataCart.length) {

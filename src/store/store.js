@@ -6,8 +6,8 @@ import cartReducers from "@/features/cartSlice";
 const store = configureStore({
   reducer: {
     activePage: activePageReducer,
-    product: productReducers,
-    cart: cartReducers,
+    Product: productReducers,
+    Cart: cartReducers,
   },
 });
 

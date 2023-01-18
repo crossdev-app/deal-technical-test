@@ -14,7 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 const Detailcart = () => {
   const router = useRouter();
   const dispatch = useDispatch();
-  const cart = useSelector((state) => state.cart);
+  const cart = useSelector((state) => state.Cart);
   const { id } = router.query;
   useEffect(() => {
     if (!router.isReady) return;

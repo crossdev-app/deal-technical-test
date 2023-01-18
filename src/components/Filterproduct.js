@@ -13,7 +13,7 @@ import Modal from "react-bootstrap/Modal";
 import Link from "next/link";
 
 const Filterproduct = () => {
-  const product = useSelector((state) => state.product);
+  const product = useSelector((state) => state.Product);
   const dispatch = useDispatch();
   const filterCategory = (e) => {
     dispatch(setFilteredCategoryKey({ filterCategoryKey: e.target.value }));

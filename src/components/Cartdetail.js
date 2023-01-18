@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 const Cartdetail = ({ userProps, cartProps }) => {
-  const cart = useSelector((state) => state.cart);
+  const cart = useSelector((state) => state.Cart);
   return (
     <div className='c-card'>
       <h4>Cart Detail</h4>

@@ -6,7 +6,7 @@ import { fetchCartData } from "@/features/cartSlice";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-const index = () => {
+const Cart = () => {
   const cart = useSelector((state) => state.Cart);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -26,4 +26,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Cart;

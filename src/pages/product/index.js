@@ -7,7 +7,7 @@ import Filterproduct from "@/components/Filterproduct";
 import { updatePage } from "@/features/activePageSlice";
 import Loadingindicator from "@/components/Loadingindicator";
 
-const product = () => {
+const Product = () => {
   const product = useSelector((state) => state.Product);
   const dispatch = useDispatch();
 
@@ -47,4 +47,4 @@ const product = () => {
   );
 };
 
-export default product;
+export default Product;

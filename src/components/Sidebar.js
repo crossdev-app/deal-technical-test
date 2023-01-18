@@ -1,4 +1,5 @@
-import { updatePage } from "@/features/activePageSlice";
+import { toggleSidebar, updatePage } from "@/features/activePageSlice";
+import { Icon } from "@iconify/react";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import Sidemenu from "./Sidemenu";
@@ -15,6 +16,15 @@ const Sidebar = () => {
 
   return (
     <div className={sidebarShown ? "c-sidebar c-sidebar-shown" : "c-sidebar"}>
+      <p className='text-end'>
+        <Icon
+          onClick={() => {
+            dispatch(toggleSidebar());
+          }}
+          icon='gg:close-o'
+          className='btn-close-sidebar'
+        />
+      </p>
       <ul>
         <Link
           href='/'

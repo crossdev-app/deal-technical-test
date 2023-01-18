@@ -1,10 +1,11 @@
 import Layout from "@/components/Layout";
 import Loadingindicator from "@/components/Loadingindicator";
+import Welcome from "@/components/Welcome";
 
 const index = () => {
   return (
     <Layout pageTitle='Home'>
-      <span>Home Page</span>
+      <Welcome />
     </Layout>
   );
 };

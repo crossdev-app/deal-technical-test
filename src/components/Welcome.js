@@ -10,7 +10,7 @@ const Welcome = () => {
         <a
           href='https://usedeall.com/'
           target='_blank'
-          rel='noreferrer'
+          rel='noopener noreferrer'
           className='text-primary'>
           Deall
         </a>{" "}
@@ -19,7 +19,7 @@ const Welcome = () => {
         <a
           href='https://github.com/crossdev-app/deall-technical-test'
           target='_blank'
-          rel='noreferrer'
+          rel='noopener noreferrer'
           className='text-primary'>
           here
         </a>

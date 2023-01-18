@@ -5,14 +5,19 @@ const activePageSlice = createSlice({
   initialState: {
     title: "Home",
     icon: "material-symbols:home-outline-rounded",
+    sidebarShown: false,
   },
   reducers: {
     updatePage: (state, action) => {
       state.title = action.payload.title;
       state.icon = action.payload.icon;
+      state.sidebarShown = false;
+    },
+    toggleSidebar: (state, action) => {
+      state.sidebarShown = !state.sidebarShown;
     },
   },
 });
 
-export const { updatePage } = activePageSlice.actions;
+export const { updatePage, toggleSidebar } = activePageSlice.actions;
 export default activePageSlice.reducer;

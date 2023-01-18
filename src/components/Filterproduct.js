@@ -45,7 +45,7 @@ const Filterproduct = () => {
   return (
     <div className='d-flex justify-content-between align-items-center'>
       <Link href='/product/chart'>
-        <button className='btn btn-sm btn-outline-danger mb-3'>
+        <button className='btn btn-sm btn-outline-danger mb-3 text-nowrap'>
           <Icon
             icon='material-symbols:insert-chart-outline-rounded'
             style={{ fontSize: "18px", marginBottom: "3px" }}
@@ -53,8 +53,8 @@ const Filterproduct = () => {
           Chart
         </button>
       </Link>
-      <div className='col-6 d-flex justify-content-end'>
-        <div className='col-4 mb-3 me-2'>
+      <div className='col col-sm-8 d-flex justify-content-end'>
+        <div className='col-8 col-sm-4 mb-3 me-2'>
           <div className='input-group input-group-sm'>
             <span className='input-group-text'>
               <Icon icon='mingcute:search-line' />
@@ -71,7 +71,7 @@ const Filterproduct = () => {
         </div>
 
         <button
-          className='btn btn-sm btn-outline-info mb-3'
+          className='btn btn-sm btn-outline-info mb-3 text-nowrap'
           onClick={handleShow}>
           <Icon
             icon='material-symbols:filter-list'

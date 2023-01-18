@@ -54,7 +54,7 @@ const Tablecart = ({ dataCart }) => {
       data={dataCart}
       pagination
       fixedHeader
-      fixedHeaderScrollHeight='69vh'
+      fixedHeaderScrollHeight='75vh'
       paginationRowsPerPageOptions={[5, 10, 15, 20, 25]}
       highlightOnHover={true}
       pointerOnHover={true}

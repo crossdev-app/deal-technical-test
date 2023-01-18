@@ -4,7 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import Sidemenu from "./Sidemenu";
 
 const Sidebar = () => {
-  const { title, icon } = useSelector((state) => state.activePage);
+  const { title, icon, sidebarShown } = useSelector(
+    (state) => state.activePage
+  );
 
   const dispatch = useDispatch();
   const changePage = (title, icon) => {
@@ -12,7 +14,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className='c-sidebar'>
+    <div className={sidebarShown ? "c-sidebar c-sidebar-shown" : "c-sidebar"}>
       <ul>
         <Link
           href='/'

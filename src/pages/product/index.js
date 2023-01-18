@@ -5,6 +5,7 @@ import { fetchProductData } from "@/features/productSlice";
 import Tableproducts from "@/components/Tableproducts";
 import Filterproduct from "@/components/Filterproduct";
 import { updatePage } from "@/features/activePageSlice";
+import Loadingindicator from "@/components/Loadingindicator";
 
 const product = () => {
   const product = useSelector((state) => state.product);
@@ -21,7 +22,7 @@ const product = () => {
 
   return (
     <Layout pageTitle='Product'>
-      {product.loading && <div>Loading product</div>}
+      {product.loading && <Loadingindicator txt={"product"} />}
       {!product.loading && product.error ? (
         <div>Error: {product.error}</div>
       ) : null}

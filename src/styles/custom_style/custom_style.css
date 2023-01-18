@@ -8,6 +8,16 @@
 body {
   font-family: "Nunito", sans-serif;
 }
+body .loading-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+body .loading-indicator span {
+  font-style: italic;
+}
 body a {
   text-decoration: none;
   color: #fefefe;
@@ -84,4 +94,28 @@ body .main-container {
   padding: 12px;
   height: calc(100vh - 66px);
   overflow-y: auto;
+}
+body .main-container .c-card {
+  width: 100%;
+  border: 1px solid #a571e8;
+  border-radius: 1rem;
+  padding: 12px 20px;
+}
+body .main-container .c-card h4 {
+  text-align: center;
+}
+body .main-container .c-card .sub-info {
+  color: #540fad;
+  font-size: 14px;
+  font-weight: bold;
+}
+body .main-container .c-card .cust-box {
+  background-color: rgba(207, 226, 255, 0.2);
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+body .main-container .c-card .cust-box .text-muted {
+  font-style: italic;
+  font-size: 14px;
 }/*# sourceMappingURL=custom_style.css.map */

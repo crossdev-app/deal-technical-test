@@ -15,6 +15,18 @@ $base-white: #fefefe;
 body {
   font-family: "Nunito", sans-serif;
 
+  .loading-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+
+    span {
+      font-style: italic;
+    }
+  }
+
   a {
     text-decoration: none;
     color: $base-white;
@@ -106,5 +118,34 @@ body {
     padding: 12px;
     height: calc(100vh - 66px);
     overflow-y: auto;
+
+    .c-card {
+      width: 100%;
+      border: 1px solid $base-color-lighter;
+      border-radius: 1rem;
+      padding: 12px 20px;
+
+      h4 {
+        text-align: center;
+      }
+
+      .sub-info {
+        color: $base-color-dark;
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      .cust-box {
+        background-color: rgba(207, 226, 255, 0.2);
+        border-radius: 8px;
+        padding: 8px;
+        margin-bottom: 10px;
+
+        .text-muted {
+          font-style: italic;
+          font-size: 14px;
+        }
+      }
+    }
   }
 }

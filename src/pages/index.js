@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import Loadingindicator from "@/components/Loadingindicator";
 
 const index = () => {
   return (
